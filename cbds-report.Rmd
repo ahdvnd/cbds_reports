@@ -25,6 +25,7 @@ library(shiny)
 library(kableExtra)
 library(httr)
 library(rlist)
+library(reshape2)
 library(jsonlite)
 getOutputFormat <- function() {
   output <- rmarkdown:::parse_yaml_front_matter(
