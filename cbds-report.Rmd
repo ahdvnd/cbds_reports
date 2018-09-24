@@ -173,8 +173,7 @@ responses <- list.rbind(list) %>%
   mutate(value = replace(value, title=="The same as yesterday", "The same as yesterday"),
          title = replace(title, title=="The same as yesterday", "What are you working on today?")) %>% 
   dcast(ts ~ title, value.var = "value") %>% 
-  select(1,5,4) %>% 
-  rename(Date = ts)
+  select(Date = ts, "What are you working on today?", "Okay, did you have any obstacles?")
 bbb = nrow(filter(responses, is.na(`What are you working on today?`)))
 ```
 
